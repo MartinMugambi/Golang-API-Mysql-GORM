@@ -18,7 +18,7 @@ func InitializeDatabase() {
 
 	if err != nil {
 		fmt.Println(err.Error())
-		panic("Could not connect to Databasr")
+		panic("Could not connect to Database")
 	}
 
 	Database.AutoMigrate(&models.User{})

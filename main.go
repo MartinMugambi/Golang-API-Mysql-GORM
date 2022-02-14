@@ -14,7 +14,7 @@ func main() {
 
 	config.InitializeDatabase()
 
-	routes.UserRoutes(router)
+	routes.UserRouter(router)
 
 	log.Fatal(http.ListenAndServe(":8000", router))
 }
