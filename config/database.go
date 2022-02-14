@@ -1,6 +1,7 @@
 package config
 
 import (
+	"backend/models"
 	"fmt"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
@@ -20,4 +21,5 @@ func InitializeDatabase() {
 		panic("Could not connect to Databasr")
 	}
 
+	Database.AutoMigrate(&models.User{})
 }
