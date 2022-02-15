@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
+	"os"
 )
 
 var Database *gorm.DB
@@ -21,5 +22,10 @@ func InitializeDatabase() {
 		panic("Could not connect to Database")
 	}
 
+	databaseUser := os.Getenv("DATABASE_USER")
+
+	fmt.Println(databaseUser)
+
 	Database.AutoMigrate(&models.User{})
+
 }
