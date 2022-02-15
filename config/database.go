@@ -12,7 +12,7 @@ var Database *gorm.DB
 
 var err error
 
-const dns = "user:pass@tcp(127.0.0.1:3306)/dbname?charset=utf8mb4&parseTime=True&loc=Local"
+const dns = "DATABASEUSER:DATABASEPASSWORD@tcp(127.0.0.1:3306)/DATABASENAME?charset=utf8mb4&parseTime=True&loc=Local"
 
 func InitializeDatabase() {
 	Database, err = gorm.Open(mysql.Open(dns), &gorm.Config{})
